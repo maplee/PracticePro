@@ -12,8 +12,11 @@ materialScaleFactor = 65536.0
 nt3dName = "/Users/matt/Desktop/model/jiangshiche3/001.nt3d"
 nt3dName = "/Users/matt/Downloads/hq/h9.nt3d"
 nt3dName = "/Users/matt/StudioProjects/map_jni/app/src/main/res/raw/car.nt3d"
+nt3dName = "/Users/matt/Desktop/model/others/pengyouhao.nt3d"
+nt3dName = "/Users/matt/Desktop/model/others/aiqinghao.nt3d"
+nt3dName = "/Users/matt/Desktop/model/m1.nt3d"
 
-path = "/Users/matt/Desktop/model/car/"
+path = "/Users/matt/Desktop/model/m1/"
 
 saveFlag = False
 
