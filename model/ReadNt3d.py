@@ -15,8 +15,11 @@ nt3dName = "/Users/matt/StudioProjects/map_jni/app/src/main/res/raw/car.nt3d"
 nt3dName = "/Users/matt/Desktop/model/others/pengyouhao.nt3d"
 nt3dName = "/Users/matt/Desktop/model/others/aiqinghao.nt3d"
 nt3dName = "/Users/matt/Desktop/model/m1.nt3d"
+nt3dName = "/Users/matt/Desktop/20230705/car.nt3d"
+nt3dName = "/Users/matt/Downloads/自车模型/m2.nt3d"
 
 path = "/Users/matt/Desktop/model/m1/"
+path = "/Users/matt/Downloads/自车模型"
 
 saveFlag = False
 

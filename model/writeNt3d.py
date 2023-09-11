@@ -27,6 +27,7 @@ if __name__ == '__main__':
 
 path = "/Users/matt/Desktop/model/jiangshiche3/"
 path = "/Users/matt/Downloads/hq/"
+path = "/Users/matt/Documents/test_work/tree/"
 
 
 system_type = os.name
