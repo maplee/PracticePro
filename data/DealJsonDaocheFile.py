@@ -19,7 +19,14 @@ print(data[0]['time'])
 
 # 访问解析后的数据
 # ...
-
+def convert_angle(angle, lat):
+    angle_origin = 450 - angle
+    radian_origin = math.radians(angle_origin)
+    radian_lat = math.radians(lat)
+    radian_deal = math.atan2(math.tan(radian_origin) * math.cos(radian_lat), 1.0)
+    ruler = 270 if 0 <= angle < 180 else 90
+    result = ruler - math.degrees(radian_deal)
+    return result
 
 def calculate_bearing(lat1, lon1, lat2, lon2):
     # 将经纬度从度数转换为弧度
@@ -40,8 +47,9 @@ def calculate_bearing(lat1, lon1, lat2, lon2):
     bearing = math.degrees(bearing)
 
     # 保证方向角在0到360度之间
-    bearing = (bearing + 360) % 360
+    bearing = (bearing + 360) % 360.0
 
+    bearing = convert_angle(bearing,lat1)
     return bearing
 
 output_file_writer = open(output_file, 'w')
@@ -57,7 +65,7 @@ for parentItem in data:
 
     preSelfLon = selfLon
     preSelfLat = selfLat
-    index += 1
+
     # print(parentItem)
     time = parentItem['time']
     for item in parentItem['allList']:
@@ -65,10 +73,15 @@ for parentItem in data:
             selfLon = float(item['wgslon'])
             selfLat = float(item['wgslat'])
             # selfAngle = item['heading']
-            if(index % 2 == 1):
-                selfAngle = calculate_bearing(selfLat,selfLon,preSelfLat,preSelfLon)
+            if(index >= 1):
+                if(time<=1694411982000):
+                    selfAngle = calculate_bearing(preSelfLat,preSelfLon,selfLat,selfLon)
+                else:
+                    selfAngle = calculate_bearing(selfLat,selfLon,preSelfLat,preSelfLon)
+
                 item['heading'] = selfAngle
             break
+    index += 1
 
 output_file_writer.write(json.dumps(data))
 

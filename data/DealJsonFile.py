@@ -2,7 +2,8 @@ import json
 import csv
 
 directory = "/Users/matt/Desktop/20230705/20230707/"
-dataPath = directory+"15.11-10-59.json"
+directory = "/Users/matt/Downloads/"
+dataPath = directory+"4-航拍-停车_f.json"
 
 output_self = directory+ "cloud_self.txt"
 output_others = directory+ "cloud_otherCars.txt"
