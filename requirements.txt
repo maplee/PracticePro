@@ -16,4 +16,5 @@ bitarray
 pygame
 cfg2
 modules
+beautifulsoup4
 #pip3 install -r requirements.txt -i https://pypi.douban.com/simple

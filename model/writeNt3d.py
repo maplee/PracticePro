@@ -28,6 +28,8 @@ if __name__ == '__main__':
 path = "/Users/matt/Desktop/model/jiangshiche3/"
 path = "/Users/matt/Downloads/hq/"
 path = "/Users/matt/Documents/test_work/tree/"
+path = "/Users/matt/Downloads/car_1130/"
+path = "/Users/matt/Downloads/daba/"
 
 
 system_type = os.name
@@ -152,11 +154,13 @@ for name in objNames:
     # 写入法线数据
     nnNum = 0
 
+    print("面数", meshCount)
     for loop in range(meshCount):
+
         norms = obj.meshs[loop][1]
         for i in range(3):
             if nnNum < 4 or nnNum >= nCount*3-4:
-                print(obj.normals[norms[i]])
+                print("法向量",obj.normals[norms[i]])
             for j in nSortRule:
 
                 s = struct.pack("i", int((obj.normals[norms[i]][j]) * normalScaleFactor))

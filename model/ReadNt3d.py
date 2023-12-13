@@ -16,12 +16,14 @@ nt3dName = "/Users/matt/Desktop/model/others/pengyouhao.nt3d"
 nt3dName = "/Users/matt/Desktop/model/others/aiqinghao.nt3d"
 nt3dName = "/Users/matt/Desktop/model/m1.nt3d"
 nt3dName = "/Users/matt/Desktop/20230705/car.nt3d"
-nt3dName = "/Users/matt/Downloads/自车模型/m2.nt3d"
+nt3dName = "/Users/matt/StudioProjects/map_core/mapmodule/src/main/assets/style/hd_res/hd_n3d/night_mode/bicyclepoint.nt3d"
 
 path = "/Users/matt/Desktop/model/m1/"
 path = "/Users/matt/Downloads/自车模型"
+path = "/Users/matt/Desktop/aa/"
 
-saveFlag = False
+
+saveFlag = True
 
 
 print('read-----')
