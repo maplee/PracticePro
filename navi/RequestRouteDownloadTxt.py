@@ -74,58 +74,23 @@ def readFile(csv_path,download_folder):
         for row in csv_reader:
             # 打印每一行的数据
             print('ready',row)
-            # if row[0] != '191804':
+            # if row[0] != '191806':
             #     continue
-            if row[5]:
-                target_url = "{}{}&points={},{},{}".format(sample_url, row[1], row[4], row[5], row[6])
-            else:
-                target_url = "{}{}&points={},{}".format(sample_url,row[1], row[4],row[6])
+            # if row[5]:
+            #     target_url = "{}{}&points={},{},{}".format(sample_url, row[1], row[4], row[5], row[6])
+            # else:
+            target_url = "{}{}&points={},{},{},{}".format(sample_url,row[1], row[2],row[3], row[4],row[5])
             print('request url:',target_url)
             download_file(row[0],row[1],row[2],target_url, download_folder,sucess_fwriter,fail_fwriter)
 
-
-def is_valid_path(path):
-    # 检查路径是否存在
-    if not os.path.exists(path):
-        print(f"错误：路径不存在 - {path}")
-        return False
-
-    # 检查路径是否可访问
-    if not os.access(path, os.R_OK):
-        print(f"错误：路径不可访问 - {path}")
-        return False
-
-    # 可以添加更多的检查，比如路径是否是文件或目录等
-    return True
-
-def is_accessible_file(file_path):
-    # 检查路径是否为一个文件
-    if not os.path.isfile(file_path):
-        print(f"错误：提供的路径不是一个文件 - {file_path}")
-        return False
-
-    # 检查文件是否可读
-    if not os.access(file_path, os.R_OK):
-        print(f"错误：文件不可读 - {file_path}")
-        return False
-
-    # 如果需要，可以检查文件是否可写
-    # if not os.access(file_path, os.W_OK):
-    #     print(f"错误：文件不可写 - {file_path}")
-    #     return False
-
-    return True
-
 if __name__ == "__main__":
-
     nowDateStr = str(datetime.now().date()).replace("-", "")
-    # download_folder = os.getcwd()+"/"+nowDateStr+"/"
-    download_folder = "/Users/matt/Downloads/"+nowDateStr+"/hy"
-    csv_path = "/Users/matt/Downloads/hy_data_new_0328.csv"
+    # download_folder = "/Users/matt/Downloads/"+nowDateStr+"/hy1"
+    # csv_path = "/Users/matt/Downloads/hy_data_new_0328.csv"
     # download_folder = "/Users/matt/Downloads/"+nowDateStr+"/bj"
     # csv_path = "/Users/matt/Downloads/bj_data_0119.csv"
-    # download_folder = "/Users/matt/Downloads/"+nowDateStr+"/bj1"
-    # csv_path = "/Users/matt/Desktop/arbitrary_site_route_track_bj_0419.csv"
+    download_folder = "/Users/matt/Downloads/"+nowDateStr+"/bj"
+    csv_path = "/Users/matt/Downloads/bj_test.csv"
 
     if len(sys.argv) != 2:
         print("批处理参数使用默认值：",csv_path,download_folder)

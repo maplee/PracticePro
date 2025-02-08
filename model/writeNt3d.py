@@ -29,7 +29,10 @@ path = "/Users/matt/Desktop/model/jiangshiche3/"
 path = "/Users/matt/Downloads/hq/"
 path = "/Users/matt/Documents/test_work/tree/"
 path = "/Users/matt/Downloads/car_1130/"
-path = "/Users/matt/Downloads/daba/"
+path = "/Users/matt/Downloads/bus_small/"
+path = "/Users/matt/Downloads/三角锥 2/"
+path = "/Users/matt/Downloads/他车模型调整/CAR/CAR-1/"
+path = "/Users/matt/Downloads/newcar/"
 
 
 system_type = os.name
@@ -193,10 +196,11 @@ for name in objNames:
 f.write(struct.pack("i", len(pngNames)))
 
 mtl = MTL(path,mtlName)
-
+pngNames.sort()
 # 依次写入图片数据
 for pngName in pngNames:
     # 读取图片的大小
+    print(pngName)
     img_path = path+pngName
     img_cv = cv2.imread(img_path)
     # 写入图片宽

@@ -17,11 +17,17 @@ nt3dName = "/Users/matt/Desktop/model/others/aiqinghao.nt3d"
 nt3dName = "/Users/matt/Desktop/model/m1.nt3d"
 nt3dName = "/Users/matt/Desktop/20230705/car.nt3d"
 nt3dName = "/Users/matt/StudioProjects/map_core/mapmodule/src/main/assets/style/hd_res/hd_n3d/night_mode/bicyclepoint.nt3d"
+nt3dName = "/Users/matt/Downloads/aa/lucexiaoche.nt3d"
+nt3dName = "/Users/matt/StudioProjects/map_core/mapmodule/src/main/res/raw/car_day.nt3d"
+nt3dName = "/Users/matt/Downloads/xiaoba.nt3d"
+nt3dName = "/Users/matt/Downloads/他车模型调整/CAR/CAR-1/newcar-正常.nt3d"
 
 path = "/Users/matt/Desktop/model/m1/"
 path = "/Users/matt/Downloads/自车模型"
-path = "/Users/matt/Desktop/aa/"
+path = "/Users/matt/Downloads/traffic/"
 
+if not os.path.isdir(path):
+    os.makedirs(path)
 
 saveFlag = True
 
@@ -128,7 +134,7 @@ for i in range(pngSizeRb[0]):
     # 图片数据
     pngDatas = datas[seekIndex:seekIndex + pngSizeRb[0]]
     if saveFlag:
-        outFileName = path + str(i) +".png"
+        outFileName = path +"a" +str(i) +".png"
         pngSaveFile = open(outFileName, 'wb')
         pngSaveFile.write(pngDatas)
         pngSaveFile.close()
